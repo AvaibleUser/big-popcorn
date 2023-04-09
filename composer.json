@@ -1,0 +1,18 @@
+{
+    "name": "rockspringa/big-popcorn",
+    "type": "project",
+    "require": {
+        "faapz/pdo": "^2.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Rockspringa\\BigPopcorn\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dylan Elias",
+            "email": "dylan.daev@gmail.com"
+        }
+    ]
+}
