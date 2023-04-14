@@ -1,0 +1,33 @@
+{% extends 'base.php' %}
+
+{% block title %}Iniciar Sesion{% endblock %}
+
+{% block content %}
+<div class="w-full h-full flex items-center justify-center">
+  <div class="card items-center w-96 bg-base-100">
+    <div class="card-body flex flex-col">
+      <div class="form-control">
+        <label class="input-group input-group-vertical">
+          <span>Email</span>
+          <input id="email" placeholder="email" class="input input-bordered" />
+        </label>
+      </div>
+      <div class="divider"></div>
+      <div class="form-control">
+        <label class="input-group input-group-vertical">
+          <span>Contrase;a</span>
+          <input
+            id="password"
+            placeholder="password"
+            type="password"
+            class="input input-bordered"
+          />
+        </label>
+      </div>
+      <button id="login" type="submit" class="btn m-4">Iniciar Sesion</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %} <script src="/js/login.js"></script> {% endblock %}

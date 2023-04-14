@@ -1,0 +1,55 @@
+{% extends 'base.php' %}
+
+{% block title %}Publicar{% endblock %}
+
+{% block content %}
+<div class="w-full h-full flex items-center justify-center">
+  <div class="card items-center w-96 bg-base-100">
+    <div class="card-body flex flex-col">
+      <div class="form-control">
+        <label class="input-group input-group-vertical">
+          <span>Titulo</span>
+          <input id="title" placeholder="Titulo" class="input input-bordered" />
+        </label>
+      </div>
+      <div class="divider"></div>
+
+      <div class="form-control">
+        <label class="input-group input-group-vertical">
+          <span>Resumen</span>
+          <textarea id="abstract" class="textarea textarea-bordered" placeholder="Resumen"></textarea>
+        </label>
+      </div>
+      <div class="divider"></div>
+
+      <div class="form-control">
+        <label class="input-group input-group-vertical">
+          <span>Contenido</span>
+          <input id="content" type="file" class="file-input w-full max-w-xs" />
+        </label>
+      </div>
+      <div class="divider"></div>
+
+      <label class="input-group input-group-vertical max-w-full">
+        <span>Categorias</span>
+        <select id="categories" class="select select-bordered w-full max-w-full">
+          <option disabled selected>Escoja las categorias</option>
+        </select>
+      </label>
+      <div class="divider"></div>
+
+      <label class="input-group input-group-vertical max-w-full">
+        <span>Tipo de Publicacion</span>
+        <select id="type" class="select select-bordered w-full max-w-full">
+          <option disabled selected>Escoja el tipo de publicacion</option>
+        </select>
+      </label>
+      <button id="publish-btn" type="submit" class="btn m-4">Publicar</button>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="/js/publish.js"></script>
+{% endblock %}

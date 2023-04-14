@@ -1,25 +1,44 @@
 <!DOCTYPE html>
-<html>
+<html class="min-w-screen min-h-screen">
   <head>
     <meta charset="utf-8">
-    <title><?= $title ?></title>
-    <link rel="stylesheet" href="https://unpkg.com/@daisyui/css">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="/css/styles.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-  <body class="bg-white dark:bg-gray-800">
-    <header class="bg-primary-500">
-      <nav class="container mx-auto px-4">
-        <div class="flex justify-between">
-          <a href="/" class="text-white font-bold text-2xl my-4">BigPopcorn</a>
-          <button class="btn btn-primary">Log in</button>
+  <body class="bg-primary-200 min-h-screen">
+    <header>
+      <nav class="navbar p-4">
+        <div class="flex-1">
+          <a class="btn btn-ghost normal-case text-xl" href="/dashboard.html">
+            <span class="uppercase text-primary">BIG</span>
+            <span class="lowercase">popcorn</span>
+          </a>
+        </div>
+        <div class="flex-none gap-2">
+          <div class="form-control">
+            <input
+              id="search-publication"
+              type="text"
+              placeholder="Buscar publicacion"
+              class="input input-bordered"
+            />
+          </div>
+          <div class="dropdown dropdown-end">
+            <a tabindex="0" class="btn btn-ghost normal-case">Cuenta</a>
+            <ul tabindex="0" class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+              <li id="publish"><a>Publicar...</a></li>
+              <li id="session"><a></a></li>
+              <li id="register"><a>Registrarse</a></li>
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
-    <div class="container mx-auto px-4">
-      <h1 class="text-2xl font-bold mt-8 mb-4"><?= $heading ?></h1>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-        <?= $content ?>
-      </div>
-    </div>
+    <main class="bg-neutral m-0 py-4 px-8 h-fit min-h-screen">
+      {% block content %}{% endblock %}
+    </main>
   </body>
+  {% block scripts %}{% endblock %}
+  <script src="/js/index.js"></script>
 </html>

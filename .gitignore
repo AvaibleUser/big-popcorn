@@ -1,1 +1,6 @@
 /vendor/
+*big-popcorn*.tar
+src/static/css
+node_modules
+package*
+tailwind.config.js

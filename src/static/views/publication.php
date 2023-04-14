@@ -1,5 +1,7 @@
 {% extends 'base.php' %}
 
+{% block title %}Publicacion {{ publication.title }}{% endblock %}
+
 {% block content %}
   <div class="container mx-auto mt-8">
     <h2 class="text-xl font-medium">{{ publication.title }}</h2>
@@ -30,6 +32,8 @@
         <div class="mt-2">{{ category.name }}</div>
       {% endfor %}
     </div>
-    <div class="mt-4">{{ publication.content }}</div>
+    <div class="mt-4">
+      <embed src="data:application/pdf;base64,{{ publication.content }}" type="application/pdf" width="100%" height="600">
+    </div>
   </div>
 {% endblock %}
